@@ -1,0 +1,148 @@
+/* --- Core Styles & Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+/* --- Animations --- */
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+/* --- Gold Theme System --- */
+.gold-shimmer {
+    background: linear-gradient(110deg, #B8860B 0%, #D4AF37 25%, #FFD700 50%, #D4AF37 75%, #B8860B 100%);
+    background-size: 200% auto;
+    animation: shimmer 4s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.gold-divider {
+    width: 96px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, #B8860B 15%, #D4AF37 30%, #FFD700 50%, #D4AF37 70%, #B8860B 85%, transparent 100%);
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
+}
+
+/* --- Navigation --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.3s;
+    background-color: transparent;
+}
+
+nav.scrolled {
+    background-color: #000000;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: #D4AF37;
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.6), #000000);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* --- Components --- */
+.btn-primary {
+    background: linear-gradient(145deg, #C9A959 0%, #D4AF37 50%, #C9A959 100%);
+    color: #000000;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* --- Forms --- */
+input, select, textarea {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 0.75rem 1rem;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .mobile-menu-btn { display: block; }
+}
