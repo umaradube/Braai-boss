@@ -2,10 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catering Packages - Braai Boss | Premium Braai Catering Durban</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <title>Braai Boss - Premium Braai & Catering | Durban, South Africa</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+
+        html{
+            scroll-behavior: smooth;
+        
+        }
         * {
             margin: 0;
             padding: 0;
@@ -13,17 +24,10 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #000000;
             color: #FFFFFF;
             overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Helvetica Neue', 'Arial', sans-serif;
-            font-weight: 300;
-            letter-spacing: 0.05em;
         }
 
         @keyframes shimmer {
@@ -31,33 +35,94 @@
             100% { background-position: 200% center; }
         }
 
+        @keyframes goldPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+
         .gold-shimmer {
-            background: linear-gradient(110deg, #B8860B 0%, #D4AF37 25%, #FFD700 50%, #D4AF37 75%, #B8860B 100%);
+            background: linear-gradient(
+                110deg,
+                #B8860B 0%,
+                #D4AF37 25%,
+                #FFD700 50%,
+                #D4AF37 75%,
+                #B8860B 100%
+            );
             background-size: 200% auto;
             animation: shimmer 4s ease-in-out infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 400;
+            font-weight: 800;
         }
 
-        .btn-primary {
-            background: #D4AF37;
-            color: #000000;
-            padding: 1rem 3rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+        .gold-solid {
+            color: #D4AF37;
+            font-weight: 700;
         }
 
-        .btn-primary:hover {
-            background: #C9A959;
-            transform: translateY(-1px);
+        .gold-border {
+            border: 2px solid #D4AF37;
+            box-shadow: 
+                inset 0 1px 0 rgba(255, 215, 0, 0.3),
+                inset 0 -1px 0 rgba(184, 134, 11, 0.3),
+                0 2px 8px rgba(212, 175, 55, 0.15);
+        }
+
+        .gold-button {
+            background: linear-gradient(145deg, #C9A959 0%, #D4AF37 50%, #C9A959 100%);
+            box-shadow: 
+                0 4px 15px rgba(212, 175, 55, 0.25),
+                inset 0 1px 0 rgba(255, 215, 0, 0.4),
+                inset 0 -2px 0 rgba(184, 134, 11, 0.4);
+            position: relative;
+        }
+
+        .gold-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .gold-button:hover::before {
+            left: 100%;
+        }
+
+        .gold-accent {
+            color: #D4AF37;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .metallic-gold {
+            background: linear-gradient(
+                135deg,
+                #B8860B 0%,
+                #D4AF37 20%,
+                #FFD700 40%,
+                #D4AF37 60%,
+                #B8860B 80%,
+                #8B6914 100%
+            );
+        }
+
+        .gold-divider {
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                #B8860B 15%,
+                #D4AF37 30%,
+                #FFD700 50%,
+                #D4AF37 70%,
+                #B8860B 85%,
+                transparent 100%
+            );
+            box-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
         }
 
         nav {
@@ -65,8 +130,13 @@
             top: 0;
             width: 100%;
             z-index: 1000;
+            transition: background 0.3s;
+            background-color: transparent;
+        }
+
+        nav.scrolled {
             background-color: #000000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
         }
 
         .nav-container {
@@ -83,155 +153,435 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 20px;
-            font-weight: 300;
-            letter-spacing: 0.1em;
+            font-size: 24px;
+            font-weight: bold;
         }
 
         .nav-menu {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             list-style: none;
         }
 
         .nav-menu a {
             color: #FFFFFF;
             text-decoration: none;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
+            cursor: pointer;
             transition: color 0.2s;
-            font-family: 'Helvetica Neue', sans-serif;
         }
 
         .nav-menu a:hover {
             color: #D4AF37;
         }
 
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #D4AF37;
+            cursor: pointer;
         }
 
-        .hero-catering {
-            padding: 10rem 1rem 5rem;
-            background: #000000;
+        .mobile-menu {
+            display: none;
+            background-color: #000000;
+            padding: 1rem 2rem;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 0;
+            color: #FFFFFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.6), #000000);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0 1rem;
         }
 
-        .hero-catering h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-        }
-
-        .section-divider {
-            width: 80px;
-            height: 1px;
-            background: #D4AF37;
-            margin: 0 auto 2rem;
-        }
-
-        .package-card {
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 2.5rem;
-            background: #000000;
-            transition: all 0.3s;
-        }
-
-        .package-card:hover {
-            border-color: #D4AF37;
-            transform: translateY(-2px);
-        }
-
-        .package-card h4 {
-            font-size: 1.25rem;
-            font-weight: 300;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
             margin-bottom: 1.5rem;
         }
 
-        .package-card ul {
-            list-style: none;
-            padding: 0;
-            line-height: 1.9;
-            font-size: 0.9rem;
+        .hero .subtitle {
+            font-size: 4rem;
         }
 
-        .package-card ul li {
-            color: #CCCCCC;
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: #E5E5E5;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(145deg, #C9A959 0%, #D4AF37 50%, #C9A959 100%);
+            color: #000000;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 
+                0 4px 15px rgba(212, 175, 55, 0.25),
+                inset 0 1px 0 rgba(255, 215, 0, 0.4),
+                inset 0 -2px 0 rgba(184, 134, 11, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 6px 20px rgba(212, 175, 55, 0.35),
+                inset 0 1px 0 rgba(255, 215, 0, 0.5),
+                inset 0 -2px 0 rgba(184, 134, 11, 0.5);
+        }
+
+        .btn-secondary {
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+            background: transparent;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 
+                inset 0 1px 0 rgba(255, 215, 0, 0.2),
+                0 2px 8px rgba(212, 175, 55, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(145deg, #C9A959 0%, #D4AF37 50%, #C9A959 100%);
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-secondary:hover::before {
+            width: 100%;
+        }
+
+        .btn-secondary:hover {
+            color: #000000;
+            border-color: #FFD700;
+        }
+
+        section {
+            padding: 5rem 1rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .section-divider {
+            width: 96px;
+            height: 4px;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                #B8860B 15%,
+                #D4AF37 30%,
+                #FFD700 50%,
+                #D4AF37 70%,
+                #B8860B 85%,
+                transparent 100%
+            );
+            margin: 0 auto;
+            box-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .menu-item {
+            border: 2px solid rgba(212, 175, 55, 0.25);
+            background: linear-gradient(to bottom right, rgba(31, 41, 55, 0.9), #000000);
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-item:hover {
+            border-color: #D4AF37;
+            box-shadow: 
+                0 4px 16px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 215, 0, 0.1);
+        }
+
+        .menu-item-image {
+            height: 192px;
+            overflow: hidden;
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 0.5rem;
         }
 
-        .package-card ul li::before {
-            content: "•";
-            color: #D4AF37;
+        .menu-item-name {
+            font-size: 1.25rem;
             font-weight: bold;
-            display: inline-block;
-            width: 1.5em;
+        }
+
+        .menu-item-price {
+            color: #D4AF37;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .menu-item-desc {
+            color: #9CA3AF;
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        .delivery-card {
+            border: 2px solid #D4AF37;
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            background: linear-gradient(to bottom right, rgba(31, 41, 55, 0.5), #000000);
+        }
+
+        .delivery-card:hover {
+            background-color: #D4AF37;
+            color: #000000;
+            transform: translateY(-5px);
+        }
+
+        .delivery-card:hover i {
+            color: #000000;
+        }
+
+        .catering-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .catering-service {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: linear-gradient(to bottom right, rgba(31, 41, 55, 0.5), #000000);
+            transition: all 0.3s;
+        }
+
+        .catering-service:hover {
+            border-color: #D4AF37;
+            transform: translateY(-5px);
         }
 
         .contact-form {
-            max-width: 900px;
+            max-width: 672px;
             margin: 0 auto;
-            border: 1px solid #D4AF37;
-            padding: 3rem;
-            background: #000000;
+            border: 2px solid #D4AF37;
+            padding: 2rem;
+            background: linear-gradient(to bottom right, rgba(31, 41, 55, 0.7), #000000);
         }
 
         input, select, textarea {
             width: 100%;
-            background-color: #000000;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 0.875rem 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            padding: 0.75rem 1rem;
             color: #FFFFFF;
-            margin-bottom: 1.25rem;
-            transition: all 0.3s;
-            font-family: 'Georgia', serif;
-            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-family: inherit;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: #D4AF37;
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
         }
 
-        select {
-            font-family: 'Helvetica Neue', sans-serif;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
         }
 
         footer {
             background-color: #000000;
             padding: 2rem 1rem;
             text-align: center;
-            color: #999999;
+            color: #9CA3AF;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
 
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #FFFFFF;
+            transform: translateY(-3px);
+        }
+
         @media (max-width: 768px) {
-            .hero-catering h1 {
-                font-size: 2rem;
-            }
             .nav-menu {
                 display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero .subtitle {
+                font-size: 3rem;
+            }
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.25rem;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
+    <nav id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i data-lucide="flame" width="24" height="24" style="color: #D4AF37;"></i>
-                <span>BRAAI <span style="color: #D4AF37;">BOSS</span></span>
+                <i data-lucide="flame" width="32" height="32" style="color: #D4AF37;"></i>
+                <span>BRAAI <span class="gold-shimmer">BOSS</span></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="index.html#menu">MENU</a></li>
-                <li><a href="index.html#delivery">DELIVERY</a></li>
-                <li><a href="catering.html" style="color: #D4AF37;">CATERING</a></li>
-                <li><a href="index.html#contact">CONTACT</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#about">Contact</a></li>
             </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu" width="24" height="24"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a onclick="scrollTo('menu')">Menu</a>
+            <a onclick="scrollTo('delivery')">Delivery</a>
+            <a onclick="scrollTo('catering')">Catering</a>
+            <a onclick="scrollTo('about')">About</a>
+            <a onclick="scrollTo('contact')">Contact</a>
         </div>
     </nav>
 
@@ -521,19 +871,34 @@
 
     <footer>
         <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem;">
-            <i data-lucide="flame" width="20" height="20" style="color: #D4AF37;"></i>
-            <span style="font-size: 1rem; font-weight: 300; color: #FFFFFF; letter-spacing: 0.1em;">BRAAI <span style="color: #D4AF37;">BOSS</span></span>
+            <i data-lucide="flame" width="24" height="24" style="color: #D4AF37;"></i>
+            <span style="font-size: 1.25rem; font-weight: bold; color: #FFFFFF;">BRAAI <span class="gold-shimmer">BOSS</span></span>
         </div>
-        <p style="font-size: 0.85rem;">© 2026 Braai Boss. All rights reserved.</p>
-        <p style="font-size: 0.85rem; margin-top: 0.75rem;">
-            <a href="index.html" style="color: #D4AF37; text-decoration: none;">Home</a> | 
-            <a href="tel:+27312345678" style="color: #D4AF37; text-decoration: none;">+27 31 234 5678</a> | 
-            <a href="mailto:info@braaiboss.co.za" style="color: #D4AF37; text-decoration: none;">info@braaiboss.co.za</a>
-        </p>
+        <p style="font-size: 0.875rem;">© 2026 Braai Boss. All rights reserved. | Premium Braai & Catering | Durban, South Africa</p>
     </footer>
 
     <script>
         lucide.createIcons();
+
+        function scrollTo(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('mobileMenu').classList.remove('active');
+        }
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
     </script>
 </body>
 </html>
+
+
