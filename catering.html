@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Packages - Braai Boss | Premium Braai Catering Durban</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .gold-shimmer {
+            background: linear-gradient(110deg, #B8860B 0%, #D4AF37 25%, #FFD700 50%, #D4AF37 75%, #B8860B 100%);
+            background-size: 200% auto;
+            animation: shimmer 4s ease-in-out infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 400;
+        }
+
+        .btn-primary {
+            background: #D4AF37;
+            color: #000000;
+            padding: 1rem 3rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+        }
+
+        .btn-primary:hover {
+            background: #C9A959;
+            transform: translateY(-1px);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #000000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .nav-menu a:hover {
+            color: #D4AF37;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .hero-catering {
+            padding: 10rem 1rem 5rem;
+            background: #000000;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-catering h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 1px;
+            background: #D4AF37;
+            margin: 0 auto 2rem;
+        }
+
+        .package-card {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2.5rem;
+            background: #000000;
+            transition: all 0.3s;
+        }
+
+        .package-card:hover {
+            border-color: #D4AF37;
+            transform: translateY(-2px);
+        }
+
+        .package-card h4 {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-card ul {
+            list-style: none;
+            padding: 0;
+            line-height: 1.9;
+            font-size: 0.9rem;
+        }
+
+        .package-card ul li {
+            color: #CCCCCC;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-card ul li::before {
+            content: "•";
+            color: #D4AF37;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em;
+        }
+
+        .contact-form {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid #D4AF37;
+            padding: 3rem;
+            background: #000000;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            background-color: #000000;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 0.875rem 1rem;
+            color: #FFFFFF;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s;
+            font-family: 'Georgia', serif;
+            font-size: 0.95rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+
+        select {
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        footer {
+            background-color: #000000;
+            padding: 2rem 1rem;
+            text-align: center;
+            color: #999999;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero-catering h1 {
+                font-size: 2rem;
+            }
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i data-lucide="flame" width="24" height="24" style="color: #D4AF37;"></i>
+                <span>BRAAI <span style="color: #D4AF37;">BOSS</span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#menu">MENU</a></li>
+                <li><a href="index.html#delivery">DELIVERY</a></li>
+                <li><a href="catering.html" style="color: #D4AF37;">CATERING</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-catering">
+        <div class="container">
+            <h1>PREMIUM <span class="gold-shimmer">CATERING PACKAGES</span></h1>
+            <div class="section-divider"></div>
+            <p style="font-size: 1rem; color: #CCCCCC; max-width: 700px; margin: 0 auto;">
+                From intimate gatherings to grand celebrations. Authentic South African braai catering with professional service.
+            </p>
+        </div>
+    </section>
+
+    <section style="padding: 5rem 1rem;">
+        <div class="container">
+            <h2 style="text-align: center; color: #D4AF37; font-size: 1.5rem; margin-bottom: 4rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase;">All Catering Packages</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; margin-bottom: 6rem;">
+                <div class="package-card">
+                    <h4 style="color: #D4AF37;">Traditional Braai 15-20</h4>
+                    <ul>
+                        <li>6kg Morrocan Lamb Loin Chops</li>
+                        <li>3kg Lamb Sausages</li>
+                        <li>3kg Portugese Chicken Fillets</li>
+                        <li>3 Dozen Rolls</li>
+                        <li>Potato & Bean Salad</li>
+                        <li>Buffet Table with Table Cloth</li>
+                        <li>2x Bain Marie's with Gel Burners</li>
+                        <li>Chef to Braai Onsite</li>
+                    </ul>
+                    <p style="color: #999; font-size: 0.85rem; margin-top: 1rem; font-style: italic;">Transport Fee: Return Travel Fee</p>
+                </div>
+
+                <div class="package-card">
+                    <h4 style="color: #D4AF37;">Traditional Braai 23</h4>
+                    <ul>
+                        <li>66pc Marinated Lamb Ribs</li>
+                        <li>44pc Mild Lamb Sausages</li>
+                        <li>22pc Morrocan Lamb Loin Chops</li>
+                        <li>22pc Portugese Butterflied Chicken</li>
+                        <li>2 Dozen Hot Dog Rolls</li>
+                        <li>Potato, Greek & Mac n Cheese Salads</li>
+                        <li>Beverages Included</li>
+                        <li>Cutlery & Crockery for 23</li>
+                    </ul>
+                </div>
+
+                <div class="package-card">
+                    <h4 style="color: #D4AF37;">Traditional Braai 25-30</h4>
+                    <ul>
+                        <li>10kg Half Lamb Sliced Thin</li>
+                        <li>5kg Lamb Sausages</li>
+                        <li>5kg Portugese Chicken Fillets</li>
+                        <li>4 Dozen Rolls</li>
+                        <li>Potato, Beans & Greek Salads</li>
+                        <li>Buffet Table with Cloth</li>
+                        <li>2x Bain Marie's & Chef</li>
+                    </ul>
+                    <p style="color: #999; font-size: 0.85rem; margin-top: 1rem; font-style: italic;">Transport Fee: Return Travel Fee</p>
+                </div>
+
+                <div class="package-card">
+                    <h4 style="color: #D4AF37;">Traditional Braai 45-50</h4>
+                    <ul>
+                        <li>18kg FULL Lamb Sliced Thin for Braai</li>
+                        <li>Basted with Spare Ribs Marinade</li>
+                        <li>7kg Lamb Sausages</li>
+                        <li>7kg Portugese Chicken Butterflied Fillets</li>
+                        <li>4kg Peri Peri Winglets</li>
+                        <li>6 Dozen Rolls</li>
+                        <li>2x Potato, Greek, Pasta & Beans Salads</li>
+                        <li>Buffet Table, Bain Marie's & Chef</li>
+                    </ul>
+                </div>
+
+                <div class="package-card" style="border-color: #D4AF37;">
+                    <h4 style="color: #D4AF37;">Spit Braai 15-20</h4>
+                    <ul>
+                        <li>10kg HALF Lamb on Spit</li>
+                        <li>Braai Boss Basting Marinade</li>
+                        <li>3kg Lamb Sausages</li>
+                        <li>4kg Portugese Chicken Portions</li>
+                        <li>3 Dozen Rolls</li>
+                        <li>Potato & Greek Salad</li>
+                        <li>2x Bain Marie's with Burners</li>
+                        <li>Chef to Braai Onsite</li>
+                    </ul>
+                </div>
+
+                <div class="package-card" style="border-color: #D4AF37;">
+                    <h4 style="color: #D4AF37;">Spit Braai 25-30</h4>
+                    <ul>
+                        <li>16kg FULL Lamb on Spit</li>
+                        <li>Braai Boss Basting Marinade</li>
+                        <li>5kg Lamb Sausages</li>
+                        <li>6kg Portugese Chicken Portions</li>
+                        <li>4 Dozen Rolls</li>
+                        <li>Potato, Greek & Bean Salads</li>
+                        <li>4x Bain Marie's with Burners</li>
+                        <li>Transport 50km x 2 Included</li>
+                    </ul>
+                </div>
+
+                <div class="package-card" style="border-color: #D4AF37;">
+                    <h4 style="color: #D4AF37;">Spit Braai 35-40</h4>
+                    <ul>
+                        <li>18kg Full A GRADE Lamb On Spit</li>
+                        <li>5kg Lamb Sausages</li>
+                        <li>7kg Portugese Chicken Portions</li>
+                        <li>3kg Exotic Chicken Sosaties</li>
+                        <li>5 Dozen Rolls</li>
+                        <li>Multiple Premium Salads</li>
+                        <li>4x Bain Marie's with Burners</li>
+                        <li>Cutlery & Crockery for 40</li>
+                    </ul>
+                    <p style="color: #999; font-size: 0.85rem; margin-top: 1rem; font-style: italic;">Transport Fee: Return Travel Fee</p>
+                </div>
+
+                <div class="package-card" style="border-color: #D4AF37;">
+                    <h4 style="color: #D4AF37;">Spit Braai 55-60 UPGRADE</h4>
+                    <ul>
+                        <li>22kg FULL Lamb on Spit</li>
+                        <li>Braai Boss Basting Marinade</li>
+                        <li>12kg Mild Lamb Sausages (+3kg)</li>
+                        <li>15kg Portugese Chicken Portions (+4kg)</li>
+                        <li>5kg Exotic Chicken Sosaties</li>
+                        <li>8 Dozen Rolls (+1 Doz)</li>
+                        <li>2x Potato, 2x Greek, Pasta & Beans Salads</li>
+                        <li>2 Buffet Tables, 5x Bain Marie's & Chef</li>
+                    </ul>
+                    <p style="color: #999; font-size: 0.85rem; margin-top: 1rem; font-style: italic;">Transport Fee: Return Travel Fee</p>
+                </div>
+
+                <div class="package-card" style="border-color: #D4AF37; background: linear-gradient(to bottom, #000000, #0A0A0A);">
+                    <h4 style="color: #FFD700;">Lamb On Spit 45-50</h4>
+                    <ul>
+                        <li>20kg FULL Lamb on Spit</li>
+                        <li>7kg Lamb Sausages</li>
+                        <li>9kg Portugese Chicken Portions</li>
+                        <li>4kg Exotic Chicken Sosaties</li>
+                        <li>6 Dozen Rolls</li>
+                        <li>2 Potato, 1 Beans, 1 Greek, 1 Pasta Salad</li>
+                        <li>2 Buffet Tables with Cloths</li>
+                        <li>5x Chaffing Trays with Burners</li>
+                        <li>Braai Chef, Charcoal & Equipment</li>
+                    </ul>
+                </div>
+
+                <div class="package-card" style="border-color: #D4AF37; background: linear-gradient(to bottom, #000000, #0A0A0A);">
+                    <h4 style="color: #FFD700;">Spit Braai Package 65-70</h4>
+                    <ul>
+                        <li>24kg Full Lamb On Spit</li>
+                        <li>Braai Boss Basting Marinade</li>
+                        <li>11kg Lamb Sausages</li>
+                        <li>13kg Portugese Chicken</li>
+                        <li>6kg Exotic Chicken Sosaties</li>
+                        <li>8 Dozen Rolls</li>
+                        <li>3 Potato, 1 Pasta, 2 Greek, 1 Bean Salad</li>
+                        <li>2 Buffet Tables, 5x Bain Marie's & Chef</li>
+                    </ul>
+                </div>
+
+                <div class="package-card" style="border-color: #D4AF37; background: linear-gradient(to bottom, #000000, #0A0A0A);">
+                    <h4 style="color: #FFD700;">Spit Braai 85-90</h4>
+                    <ul>
+                        <li>18kg FULL + 10kg HALF Lamb On Spit</li>
+                        <li>Braai Boss Basting Marinade</li>
+                        <li>13kg Lamb Sausages</li>
+                        <li>13kg Portugese Chicken Portions</li>
+                        <li>8kg Exotic Chicken Sosaties</li>
+                        <li>10 Dozen Rolls</li>
+                        <li>4x Potato, 2x Greek, 2x Beans, 1x Pasta</li>
+                        <li>2 Buffet Tables, 6x Bain Marie's</li>
+                        <li>Cutlery & Crockery for 90</li>
+                    </ul>
+                </div>
+
+                <div class="package-card" style="border-color: #FFD700; background: linear-gradient(to bottom, #0A0A0A, #000000);">
+                    <h4 style="color: #FFD700;">Traditional Braai 70+15</h4>
+                    <ul style="color: #E5E5E5;">
+                        <li>28kg A GRADE Lamb Sliced (Variety of Cuts)</li>
+                        <li>7kg Mild + 7kg Oriental Lamb Sausages</li>
+                        <li>14kg Portugese Chicken Butterflied Fillets</li>
+                        <li>8kg Peri Peri Winglets</li>
+                        <li>10 Dozen Rolls</li>
+                        <li>3x Potato, 2x Greek, 2x Beans, 1x Pasta</li>
+                        <li>Buffet Tables with Cloths</li>
+                        <li>Separate Ladies Section with Chaffing Trays</li>
+                        <li>Braai OFFSITE and Deliver with Setup</li>
+                    </ul>
+                </div>
+
+                <div class="package-card" style="border-color: #FFD700; background: linear-gradient(to bottom, #0A0A0A, #000000);">
+                    <h4 style="color: #FFD700;">Traditional Braai 110</h4>
+                    <ul style="color: #E5E5E5;">
+                        <li>30kg A Grade Lamb Variety Cuts & Basted</li>
+                        <li>7.5kg Mild + 7.5kg Oriental Lamb Sausages</li>
+                        <li>20kg Portugese Chicken Portions</li>
+                        <li>12 Dozen Hotdog Rolls</li>
+                        <li>4x Potato, 3x Greek, 2x Beans, 2x Pasta</li>
+                        <li>3 Buffet Tables with Cloths</li>
+                        <li>Bain Marie's, Gel Burners & Tongs</li>
+                        <li>Chefs & Staff to Serve at Buffet</li>
+                    </ul>
+                    <p style="color: #D4AF37; font-size: 0.85rem; margin-top: 1rem;">Disposables: Plates, Forks, Knives, Serviettes x 110</p>
+                </div>
+
+                <div class="package-card" style="border-color: #FFD700; background: linear-gradient(to bottom, #0A0A0A, #000000);">
+                    <h4 style="color: #FFD700;">Lamb Wors Rolls</h4>
+                    <ul style="color: #E5E5E5;">
+                        <li>150x Mutton Chilli Garlic Wors</li>
+                        <li>150x Plain White Hot Dog Rolls</li>
+                        <li>5kg Grilled Onions</li>
+                        <li>10x Assorted Bottled Sauces</li>
+                        <li>150x Polystyrene Containers</li>
+                        <li>Serviettes</li>
+                        <li>2 Buffet Stations & Table Cloths</li>
+                        <li>4x Bain Marie's, Gel Burners & Tongs</li>
+                        <li>2 Staff to Assemble & Serve</li>
+                    </ul>
+                    <p style="color: #D4AF37; font-size: 0.85rem; margin-top: 1rem;">Braai offsite - Perfect for events!</p>
+                </div>
+            </div>
+
+            <!-- Inquiry Form at Bottom -->
+            <div style="border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 5rem;">
+                <div class="contact-form">
+                    <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 300; letter-spacing: 0.1em;">REQUEST A <span class="gold-shimmer">QUOTE</span></h3>
+                    <p style="text-align: center; color: #999; font-size: 0.9rem; margin-bottom: 2.5rem;">Complete the form below and we'll respond within 24 hours</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+                        <input type="text" placeholder="Your Name *" required>
+                        <input type="email" placeholder="Email Address *" required>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+                        <input type="tel" placeholder="Phone Number *" required>
+                        <input type="date" placeholder="Event Date *" required>
+                    </div>
+                    <select required>
+                        <option value="">Select Package *</option>
+                        <option value="traditional-15-20">Traditional Braai 15-20</option>
+                        <option value="traditional-23">Traditional Braai 23</option>
+                        <option value="traditional-25-30">Traditional Braai 25-30</option>
+                        <option value="traditional-45-50">Traditional Braai 45-50</option>
+                        <option value="traditional-70">Traditional Braai 70+15 (ladies)</option>
+                        <option value="traditional-110">Traditional Braai 110</option>
+                        <option value="spit-15-20">Spit Braai 15-20</option>
+                        <option value="spit-25-30">Spit Braai 25-30</option>
+                        <option value="spit-35-40">Spit Braai 35-40</option>
+                        <option value="spit-45-50">Lamb On Spit 45-50</option>
+                        <option value="spit-55-60">Spit Braai 55-60 UPGRADE</option>
+                        <option value="spit-65-70">Spit Braai Package 65-70</option>
+                        <option value="spit-85-90">Spit Braai 85-90</option>
+                        <option value="lamb-wors">Lamb Wors Rolls</option>
+                        <option value="custom">Custom Package</option>
+                    </select>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+                        <input type="number" placeholder="Number of Guests *" min="1" required>
+                        <select>
+                            <option value="">Event Type</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="birthday">Birthday Party</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="religious">Religious Celebration</option>
+                            <option value="private">Private Party</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="Event Location / Venue">
+                    <textarea rows="4" placeholder="Additional requirements or special requests..."></textarea>
+                    <div style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label style="display: flex; align-items: center; gap: 0.75rem; color: #CCC; cursor: pointer; font-size: 0.9rem;">
+                            <input type="checkbox" style="width: auto; margin: 0;">
+                            <span>Transport required (specify distance in message)</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.75rem; color: #CCC; cursor: pointer; font-size: 0.9rem;">
+                            <input type="checkbox" style="width: auto; margin: 0;">
+                            <span>Cutlery & crockery hire needed</span>
+                        </label>
+                    </div>
+                    <button class="btn-primary" style="width: 100%; margin: 0;" onclick="alert('Thank you for your inquiry. Our team will contact you within 24 hours with a detailed quote.')">Submit Inquiry</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <i data-lucide="flame" width="20" height="20" style="color: #D4AF37;"></i>
+            <span style="font-size: 1rem; font-weight: 300; color: #FFFFFF; letter-spacing: 0.1em;">BRAAI <span style="color: #D4AF37;">BOSS</span></span>
+        </div>
+        <p style="font-size: 0.85rem;">© 2026 Braai Boss. All rights reserved.</p>
+        <p style="font-size: 0.85rem; margin-top: 0.75rem;">
+            <a href="index.html" style="color: #D4AF37; text-decoration: none;">Home</a> | 
+            <a href="tel:+27312345678" style="color: #D4AF37; text-decoration: none;">+27 31 234 5678</a> | 
+            <a href="mailto:info@braaiboss.co.za" style="color: #D4AF37; text-decoration: none;">info@braaiboss.co.za</a>
+        </p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
