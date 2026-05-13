@@ -130,13 +130,16 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            transition: background 0.3s;
+            /* This ensures the background color fades in nicely */
+            transition: background-color 0.4s ease-in-out; 
             background-color: transparent;
         }
 
         nav.scrolled {
             background-color: #000000;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+            /* Optional: adds a slight gold glow at the bottom of the nav when scrolled */
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .nav-container {
@@ -892,14 +895,19 @@
             document.getElementById('mobileMenu').classList.toggle('active');
         }
 
-        window.addEventListener('scroll', function() {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+        wwindow.addEventListener('scroll', function() {
+        const nav = document.getElementById('navbar');
+        const hero = document.querySelector('.hero');
+        const heroHeight = hero.offsetHeight;
+
+        // Trigger the black background once we scroll past the hero height
+        // We subtract a bit (e.g., 80px) so the transition starts just before the hero ends
+        if (window.scrollY > (heroHeight - 80)) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
     </script>
 </body>
 </html>
