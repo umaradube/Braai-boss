@@ -572,11 +572,11 @@
                 <span>BRAAI <span class="gold-shimmer">BOSS</span></span>
             </div>
             <ul class="nav-menu">
-                <li><a onclick="scrollTo('menu')" style="cursor: pointer;">Menu</a></li>
-                <li><a onclick="scrollTo('delivery')" style="cursor: pointer;">Delivery</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#delivery">Delivery</a></li>
                 <li><a href="catering.html">Catering</a></li>
-                <li><a onclick="scrollTo('about')" style="cursor: pointer;">About</a></li>
-                <li><a onclick="scrollTo('contact')" style="cursor: pointer;">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMenu()">
                 <i data-lucide="menu" width="24" height="24"></i>
@@ -585,7 +585,7 @@
         <div class="mobile-menu" id="mobileMenu">
             <a onclick="scrollTo('menu')">Menu</a>
             <a onclick="scrollTo('delivery')">Delivery</a>
-            <a onclick="scrollTo('catering')">Catering</a>
+            <a href="catering.html">Catering</a>
             <a onclick="scrollTo('about')">About</a>
             <a onclick="scrollTo('contact')">Contact</a>
         </div>
@@ -601,8 +601,8 @@
             </h1>
             <p>Authentic South African braai masterpieces, delivered fresh or catered at your event</p>
             <div class="hero-buttons">
-                <button class="btn-primary gold-glow" href="#delivery">ORDER DELIVERY</button>
-                <button class="btn-secondary" onclick="scrollTo('catering')">BOOK CATERING</button>
+                <a class="btn-primary gold-glow" style="cursor: pointer;" onclick="scrollTo('delivery')">ORDER DELIVERY</a>
+                <button class="btn-secondary" onclick="window.location.href='catering.html'">BOOK CATERING</button>
             </div>
         </div>
     </section>
