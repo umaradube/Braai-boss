@@ -451,6 +451,9 @@
             transition: all 0.3s;
             cursor: pointer;
             background: linear-gradient(to bottom right, rgba(31, 41, 55, 0.5), #000000);
+            text-decoration: none;
+            color: #FFFFFF;
+            display: block;
         }
 
         .delivery-card:hover {
@@ -569,11 +572,11 @@
                 <span>BRAAI <span class="gold-shimmer">BOSS</span></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#delivery">Delivery</a></li>
+                <li><a onclick="scrollTo('menu')" style="cursor: pointer;">Menu</a></li>
+                <li><a onclick="scrollTo('delivery')" style="cursor: pointer;">Delivery</a></li>
                 <li><a href="catering.html">Catering</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#about">Contact</a></li>
+                <li><a onclick="scrollTo('about')" style="cursor: pointer;">About</a></li>
+                <li><a onclick="scrollTo('contact')" style="cursor: pointer;">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMenu()">
                 <i data-lucide="menu" width="24" height="24"></i>
@@ -614,125 +617,323 @@
                 </p>
             </div>
 
-            <h3 style="text-align: center; color: #D4AF37; font-size: 2rem; margin-bottom: 2rem;">BRAAI PLATES</h3>
+            <h3 style="text-align: center; color: #D4AF37; font-size: 2rem; margin-bottom: 2rem;">Braai House Classics</h3>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Boerewors">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Superboss">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <div class="menu-item-name">Boerewors Special</div>
-                            <div class="menu-item-price">R145</div>
+                            <div class="menu-item-name">Superboss</div>
+                            <div class="menu-item-price">R325.00</div>
                         </div>
-                        <p class="menu-item-desc">Traditional South African beef boerewors served with pap, chakalaka and gravy</p>
+                        <p class="menu-item-desc">6 Chops, 6 Sausages, 6 Kebabs, 6 Winglets, 6 Rolls</p>
                     </div>
                 </div>
 
                 <div class="menu-item">
                     <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Steak">
+                        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80" alt="Lamb Ribs Combo">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <div class="menu-item-name">Ribeye Steak</div>
-                            <div class="menu-item-price">R285</div>
+                            <div class="menu-item-name">Lamb Ribs Combo</div>
+                            <div class="menu-item-price">R165.00</div>
                         </div>
-                        <p class="menu-item-desc">300g aged ribeye flame-grilled to perfection, served with chips and seasonal salad</p>
+                        <p class="menu-item-desc">500g Lamb Ribs, Chips, 300ml Cooldrink</p>
                     </div>
                 </div>
 
                 <div class="menu-item">
                     <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Chicken">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Beef Buster">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <div class="menu-item-name">Chicken Sosaties</div>
-                            <div class="menu-item-price">R195</div>
+                            <div class="menu-item-name">Beef Buster</div>
+                            <div class="menu-item-price">R135.00</div>
                         </div>
-                        <p class="menu-item-desc">Marinated chicken skewers with apricot, served with yellow rice and vegetables</p>
+                        <p class="menu-item-desc">200g T-Bone, 2 Wafer Briskets, 2 Beef Wors</p>
                     </div>
                 </div>
 
                 <div class="menu-item">
                     <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Lamb">
+                        <img src="https://images.unsplash.com/photo-15145168792-6ef2b9d2c1ba?auto=format&fit=crop&w=800&q=80" alt="M5">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <div class="menu-item-name">Lamb Chops</div>
-                            <div class="menu-item-price">R265</div>
+                            <div class="menu-item-name">M5</div>
+                            <div class="menu-item-price">R135.00</div>
                         </div>
-                        <p class="menu-item-desc">Four succulent lamb chops with rosemary and mint sauce, served with roast potatoes</p>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Ribs">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Ribs</div>
-                            <div class="menu-item-price">R245</div>
-                        </div>
-                        <p class="menu-item-desc">Half rack of ribs basted in our signature BBQ sauce, served with coleslaw</p>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mixed Grill">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Mixed Grill</div>
-                            <div class="menu-item-price">R355</div>
-                        </div>
-                        <p class="menu-item-desc">Boerewors, steak, lamb chop and chicken with two sides of your choice</p>
+                        <p class="menu-item-desc">2 Chops, 2 Sausages, 2 Kebabs, 2 Bhoti, 1 Pita</p>
                     </div>
                 </div>
             </div>
 
-            <h3 style="text-align: center; color: #D4AF37; font-size: 2rem; margin-bottom: 2rem; margin-top: 3rem;">PREMIUM PLATTERS</h3>
+            <h3 style="text-align: center; color: #D4AF37; font-size: 2rem; margin-bottom: 2rem;">Feast Combos</h3>
             <div class="menu-grid">
-                <div class="menu-item" style="border-color: #D4AF37;">
-                    <div class="menu-item-image" style="height: 224px;">
-                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Family Feast">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Date Night">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <div class="menu-item-name">Family Feast</div>
-                            <div class="menu-item-price">R895</div>
+                            <div class="menu-item-name">Date Night</div>
+                            <div class="menu-item-price">R385.00</div>
                         </div>
-                        <p class="menu-item-desc">Serves 4-6: Mixed meats, 3 sides, bread and our signature sauces</p>
+                        <p class="menu-item-desc">2 x 200g Rump, 4 Chops, 4 Kebabs, 4 Wings, 2 x 300ml Cooldrinks</p>
                     </div>
                 </div>
 
-                <div class="menu-item" style="border-color: #D4AF37;">
-                    <div class="menu-item-image" style="height: 224px;">
-                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Corporate">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1534939561128-a432476a63f0?auto=format&fit=crop&w=800&q=80" alt="Steak Me Amadeus">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <div class="menu-item-name">Corporate Platter</div>
-                            <div class="menu-item-price">R1,850</div>
+                            <div class="menu-item-name">Steak Me Amadeus</div>
+                            <div class="menu-item-price">R395.00</div>
                         </div>
-                        <p class="menu-item-desc">Serves 10-12: Premium selection for events with all accompaniments</p>
+                        <p class="menu-item-desc">200g T-Bone, 200g Rump, 500g Wafer Short Ribs, 500g Wafer Briskets</p>
                     </div>
                 </div>
 
-                <div class="menu-item" style="border-color: #D4AF37;">
-                    <div class="menu-item-image" style="height: 224px;">
-                        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Braai Box">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="David Jones' Locker">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <div class="menu-item-name">Ultimate Braai Box</div>
-                            <div class="menu-item-price">R750</div>
+                            <div class="menu-item-name">David Jones' Locker</div>
+                            <div class="menu-item-price">R425.00</div>
                         </div>
-                        <p class="menu-item-desc">DIY braai pack with premium meats, marinades, and braai essentials</p>
+                        <p class="menu-item-desc">1 Full Chicken, 12 Prawns, Large Chips, 6 Pita, 2L Cooldrink</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="Blue Deal">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">Blue Deal</div>
+                            <div class="menu-item-price">R465.00</div>
+                        </div>
+                        <p class="menu-item-desc">8 Chops, 8 Sausages, 8 Kebabs, 8 Wings, 4 Pita</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80" alt="545">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">545</div>
+                            <div class="menu-item-price">R545.00</div>
+                        </div>
+                        <p class="menu-item-desc">8 Chops, 8 Sausages, 12 Kebabs, 1 Full Chicken, 6 Pita</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="595">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">595</div>
+                            <div class="menu-item-price">R595.00</div>
+                        </div>
+                        <p class="menu-item-desc">12 Chops, 12 Sausages, 12 Kebabs, 12 Bhoti, 6 Pita</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="Family Time">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">Family Time</div>
+                            <div class="menu-item-price">R695.00</div>
+                        </div>
+                        <p class="menu-item-desc">12 Chops, 12 Sausages, 12 Kebabs, 12 Winglets, 6 Fillets, 6 Pita</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=80" alt="4KG Combo">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">4KG Combo</div>
+                            <div class="menu-item-price">R699.00</div>
+                        </div>
+                        <p class="menu-item-desc">1kg Chops, 1kg Sausages, 1kg Sosaties [Unbraaied Weight]</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="Tender Love">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">Tender Love</div>
+                            <div class="menu-item-price">R795.00</div>
+                        </div>
+                        <p class="menu-item-desc">12 Chops, 12 Sausages, 12 Kebabs, 12 Bhoti, 1 Full Chicken, 6 Prawns, 6 Pita, 2L Cooldrink</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="Combo 10">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">Combo 10</div>
+                            <div class="menu-item-price">R1650.00</div>
+                        </div>
+                        <p class="menu-item-desc">30 Chops, 20 Sausages, 20 Fillets, 20 Winglets, 1½ Dozen Rolls</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; color: #D4AF37; font-size: 2rem; margin-bottom: 2rem;">Grills and Platters</h3>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1534939561128-a432476a63f0?auto=format&fit=crop&w=800&q=80" alt="Straight Pipe">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">Straight Pipe</div>
+                            <div class="menu-item-price">R35.00</div>
+                        </div>
+                        <p class="menu-item-desc">1 Hotdog, Chips</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80" alt="ASZ">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">ASZ</div>
+                            <div class="menu-item-price">R50.00</div>
+                        </div>
+                        <p class="menu-item-desc">4 Bhoti, Chips</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="BLT">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">BLT</div>
+                            <div class="menu-item-price">R60.00</div>
+                        </div>
+                        <p class="menu-item-desc">6 Kebabs, Chips</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Downpipe">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">Downpipe</div>
+                            <div class="menu-item-price">R60.00</div>
+                        </div>
+                        <p class="menu-item-desc">½ Chicken Tikka, Chips, 1 Pita</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80" alt="Billet Wheel">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">Billet Wheel</div>
+                            <div class="menu-item-price">R65.00</div>
+                        </div>
+                        <p class="menu-item-desc">2 Wafer Briskets, Chips</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="M57">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">M57</div>
+                            <div class="menu-item-price">R75.00</div>
+                        </div>
+                        <p class="menu-item-desc">2 Sausages, 2 Fillets, Chips</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80" alt="B58">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">B58</div>
+                            <div class="menu-item-price">R85.00</div>
+                        </div>
+                        <p class="menu-item-desc">2 Lamb Ribs, 2 Fillets, Chips</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80" alt="N54">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">N54</div>
+                            <div class="menu-item-price">R85.00</div>
+                        </div>
+                        <p class="menu-item-desc">2 Lamb Ribs, 2 Sausages, Chips</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=80" alt="M62">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">M62</div>
+                            <div class="menu-item-price">R110.00</div>
+                        </div>
+                        <p class="menu-item-desc">2 Lamb Ribs, 2 Sausages, 2 Kebabs, Chips</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="JB4">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">JB4</div>
+                            <div class="menu-item-price">R165.00</div>
+                        </div>
+                        <p class="menu-item-desc">4 Lamb Ribs, 4 Sausages, 4 Wings, Chips</p>
                     </div>
                 </div>
             </div>
@@ -750,21 +951,21 @@
             </div>
             
             <div class="delivery-grid">
-                <div class="delivery-card" href='https://www.ubereats.com/za/store/braai-boss/kAvhYOT3TCSnPLpxSIcXGQ', target="_blank">
+                <a href='https://www.ubereats.com/za/store/braai-boss/kAvhYOT3TCSnPLpxSIcXGQ' target="_blank" class="delivery-card">
                     <i data-lucide="utensils-crossed" width="64" height="64" style="color: #D4AF37; margin-bottom: 1rem;"></i>
                     <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">UBER EATS</h3>
                     <p style="color: #9CA3AF;">Order Now</p>
-                </div>
-                <div class="delivery-card" href='https://www.mrd.com/delivery/restaurant/braai-boss-morningside-windermere/21567', target="_blank">
+                </a>
+                <a href='https://www.mrd.com/delivery/restaurant/braai-boss-morningside-windermere/21567' target="_blank" class="delivery-card">
                     <i data-lucide="flame" width="64" height="64" style="color: #D4AF37; margin-bottom: 1rem;"></i>
                     <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">MR D FOOD</h3>
                     <p style="color: #9CA3AF;">Order Now</p>
-                </div>
-                <div class="delivery-card" href='https://www.braaibosszn.co.za', target="_blank">
+                </a>
+                <a href="https://wa.me/27738402252?text=Hi%20Braai%20Boss%2C%20I%20would%20like%20to%20place%20an%20order%20please.%20" target="_blank" class="delivery-card">
                     <i data-lucide="smartphone" width="64" height="64" style="color: #D4AF37; margin-bottom: 1rem;"></i>
                     <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">ORDER DIRECT</h3>
-                    <p style="color: #9CA3AF;">Via Website</p>
-                </div>
+                    <p style="color: #9CA3AF;">Via WhatsApp</p>
+                </a>
             </div>
         </div>
     </section>
@@ -895,7 +1096,7 @@
             document.getElementById('mobileMenu').classList.toggle('active');
         }
 
-        wwindow.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function() {
         const nav = document.getElementById('navbar');
         const hero = document.querySelector('.hero');
         const heroHeight = hero.offsetHeight;
